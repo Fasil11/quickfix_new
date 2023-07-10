@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Welcome to QuickFix</h1>
+  <p>Find the best service providers in your area.</p>
+ 
+  <form action="" method="POST">
+    <div class="input-group mb-3">
+      <input type="text" name='service' ="form-control" placeholder="service" aria-label="service" aria-describedby="basic-addon2">
+      <div class="input-group-append">
+        <button  type="submit" class="input-group-text" id="basic-addon2">Search</button>
+      </div>
+    </div>
+    <a class="nav-item nav-link" id="logout" href="/service_providers">All</a>
+    
+  </form>
+  {%for service_provider in service_providers %}
+  <div class="list-group">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">Full Name: {{service_provider.name}}</h5>
+      <small>Location: {{service_provider.location}}</small>
+    </div>
+    <p class="mb-1">{{service_provider.bio}}</p>
+    <small>Contact: {{service_provider.contact}}</small>
+    <small>Rating</small>
+  </div>
+  <hr><hr>
+  {%endfor%}
+
+{% endblock %}

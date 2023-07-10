@@ -1,0 +1,12 @@
+{%for service_provider in providers %}
+<div class="list-group">
+  <div class="d-flex w-100 justify-content-between">
+    <h5 class="mb-1">Full Name: {{service_provider.name}}</h5>
+    <small>Location: {{service_provider.location}}</small>
+  </div>
+  <p class="mb-1">{{service_provider.bio}}</p>
+  <small>Contact: {{service_provider.contact}}</small>
+  <small>Rating</small>
+</div>
+<hr><hr>
+{%endfor%}
